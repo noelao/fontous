@@ -1,0 +1,72 @@
+@font-face {
+font-family: 'Brixton';
+src: url('/fonts/sans-serif/Brixton.ttf');
+}
+
+@font-face {
+font-family: 'Bw-Glenn-Sans';
+src: url('/fonts/sans-serif/Bw-Glenn-Sans.otf');
+}
+
+@font-face {
+font-family: 'Evolventa';
+src: url('/fonts/sans-serif/Evolventa.otf');
+}
+
+@font-face {
+font-family: 'Gill-Sans-Nova';
+src: url('/fonts/sans-serif/Gill-Sans-Nova.ttf');
+}
+
+@font-face {
+font-family: 'impact';
+src: url('/fonts/sans-serif/impact.ttf');
+}
+
+@font-face {
+font-family: 'inter';
+src: url('/fonts/sans-serif/inter.ttf');
+}
+
+@font-face {
+font-family: 'Intrepid';
+src: url('/fonts/sans-serif/Intrepid.ttf');
+}
+
+@font-face {
+font-family: 'kalibelo';
+src: url('/fonts/sans-serif/kalibelo.ttf');
+}
+
+@font-face {
+font-family: 'poppins';
+src: url('/fonts/sans-serif/poppins.ttf');
+}
+
+@font-face {
+font-family: 'raleway';
+src: url('/fonts/sans-serif/raleway.ttf');
+}
+
+@font-face {
+font-family: 'RNSPhysis';
+src: url('/fonts/sans-serif/RNSPhysis.ttf');
+}
+
+@font-face {
+font-family: 'Satoshi-Variable';
+src: url('/fonts/sans-serif/Satoshi-Variable.ttf');
+}
+
+@font-face {
+font-family: 'Roobert-PRO';
+src: url('/fonts/sans-serif/Roobert-PRO.woff2');
+font-weight:400;
+font-style:normal;
+}
+@font-face {
+font-family: 'Roobert-PRO';
+src: url('/fonts/sans-serif/bold/Roobert-PRO-bold.woff2');
+font-weight:700;
+font-style:normal;
+}

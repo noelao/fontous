@@ -1,0 +1,55 @@
+# ===================================================================
+# File .gitignore Standar untuk Proyek Node.js / Express.js
+# ===================================================================
+
+# 1. DEPENDENSI
+# Folder ini berisi semua library pihak ketiga.
+# Bisa di-generate ulang kapan saja dengan `npm install` atau `yarn install`.
+# Ini adalah hal PALING PENTING untuk diabaikan.
+node_modules/
+
+# 2. FILE LOG
+# Abaikan semua file log yang dihasilkan saat runtime.
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 3. FILE ENVIRONMENT
+# Sangat penting untuk keamanan! Berisi kunci API, password database, dll.
+# Setiap developer harus punya file .env sendiri di lokal.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 4. FOLDER HASIL BUILD/KOMPILASI
+# Jika Anda menggunakan TypeScript atau bundler seperti Webpack.
+# Folder ini berisi kode yang sudah di-generate.
+dist/
+build/
+.out/
+.next/
+
+# 5. FILE SISTEM OPERASI
+# File sampah yang dibuat oleh macOS, Windows, dan Linux.
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 6. FILE EDITOR KODE / IDE
+# Pengaturan spesifik untuk editor kode Anda, tidak relevan bagi tim.
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# 7. FILE HASIL TESTING (Coverage)
+coverage/
+.nyc_output/

@@ -1,0 +1,29 @@
+@font-face {
+font-family: 'Abril-Fatface';
+src: url('/fonts/serif/Abril-Fatface.ttf');
+}
+
+@font-face {
+font-family: 'Apple-Garamond';
+src: url('/fonts/serif/Apple-Garamond.ttf');
+}
+
+@font-face {
+font-family: 'Arkibal-Serif';
+src: url('/fonts/serif/Arkibal-Serif.otf');
+}
+
+@font-face {
+font-family: 'LTC-Bodoni-175-W01';
+src: url('/fonts/serif/LTC-Bodoni-175-W01.ttf');
+}
+
+@font-face {
+font-family: 'Magazine';
+src: url('/fonts/serif/Magazine.ttf');
+}
+
+@font-face {
+font-family: 'recoleta-DEMO';
+src: url('/fonts/serif/recoleta-DEMO.otf');
+}

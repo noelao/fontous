@@ -1,0 +1,157 @@
+@font-face {
+font-family: 'Abril-Fatface';
+src: url('/fonts/serif/Abril-Fatface.ttf');
+}
+
+@font-face {
+font-family: 'Apple-Garamond';
+src: url('/fonts/serif/Apple-Garamond.ttf');
+}
+
+@font-face {
+font-family: 'Arkibal-Serif';
+src: url('/fonts/serif/Arkibal-Serif.otf');
+}
+
+@font-face {
+font-family: 'LTC-Bodoni-175-W01';
+src: url('/fonts/serif/LTC-Bodoni-175-W01.ttf');
+}
+
+@font-face {
+font-family: 'Magazine';
+src: url('/fonts/serif/Magazine.ttf');
+}
+
+@font-face {
+font-family: 'recoleta-DEMO';
+src: url('/fonts/serif/recoleta-DEMO.otf');
+}
+
+@font-face {
+font-family: 'Brixton';
+src: url('/fonts/sans-serif/Brixton.ttf');
+}
+
+@font-face {
+font-family: 'Bw-Glenn-Sans';
+src: url('/fonts/sans-serif/Bw-Glenn-Sans.otf');
+}
+
+@font-face {
+font-family: 'Evolventa';
+src: url('/fonts/sans-serif/Evolventa.otf');
+}
+
+@font-face {
+font-family: 'Gill-Sans-Nova';
+src: url('/fonts/sans-serif/Gill-Sans-Nova.ttf');
+}
+
+@font-face {
+font-family: 'impact';
+src: url('/fonts/sans-serif/impact.ttf');
+}
+
+@font-face {
+font-family: 'inter';
+src: url('/fonts/sans-serif/inter.ttf');
+}
+
+@font-face {
+font-family: 'Intrepid';
+src: url('/fonts/sans-serif/Intrepid.ttf');
+}
+
+@font-face {
+font-family: 'kalibelo';
+src: url('/fonts/sans-serif/kalibelo.ttf');
+}
+
+@font-face {
+font-family: 'poppins';
+src: url('/fonts/sans-serif/poppins.ttf');
+}
+
+@font-face {
+font-family: 'raleway';
+src: url('/fonts/sans-serif/raleway.ttf');
+}
+
+@font-face {
+font-family: 'RNSPhysis';
+src: url('/fonts/sans-serif/RNSPhysis.ttf');
+}
+
+@font-face {
+font-family: 'Satoshi-Variable';
+src: url('/fonts/sans-serif/Satoshi-Variable.ttf');
+}
+
+@font-face {
+font-family: 'Roobert-PRO';
+src: url('/fonts/sans-serif/Roobert-PRO.woff2');
+font-weight:400;
+font-style:normal;
+}
+@font-face {
+font-family: 'Roobert-PRO';
+src: url('/fonts/sans-serif/bold/Roobert-PRO-bold.woff2');
+font-weight:700;
+font-style:normal;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+
+@font-face {
+font-family: 'BellaElegante-LIMIT';
+src: url('/fonts/script/BellaElegante-LIMIT.otf');
+}
+
+@font-face {
+font-family: 'Blagkine-7OArB';
+src: url('/fonts/script/Blagkine-7OArB.otf');
+}
+
+@font-face {
+font-family: 'Brantley-Lodge-Limit';
+src: url('/fonts/script/Brantley-Lodge-Limit.ttf');
+}
+
+@font-face {
+font-family: 'Defalliya-Demo';
+src: url('/fonts/script/Defalliya-Demo.otf');
+}
+
+@font-face {
+font-family: 'Whispered-Trails';
+src: url('/fonts/script/Whispered-Trails.ttf');
+}
+
+@font-face {
+font-family: 'CSBlacken';
+src: url('/fonts/black-letter/CSBlacken.otf');
+}
+
+@font-face {
+font-family: 'Curseyt';
+src: url('/fonts/black-letter/Curseyt.ttf');
+}
+
+@font-face {
+font-family: 'Menttalis';
+src: url('/fonts/black-letter/Menttalis.otf');
+}
+
+@font-face {
+font-family: 'Array-Regular';
+src: url('/fonts/display/Array-Regular.otf');
+}
+
+@font-face {
+font-family: 'Rosewood Std Regular';
+src: url('/fonts/display/Rosewood-Std-Regular.ttf');
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <style>
+        body {
+            background-color: red;
+        }
+        .wrapper {
+            min-height: 100vh;
+            margin: 0;
+            max-width: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--terang);
+
+            position: relative;
+            p {
+                font-family: cool;
+                text-transform:uppercase;
+                font-size: calc(100vw/ 10);
+            }
+            small {
+                font-size: calc(100vw/ 9);
+                font-family: script;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-24%);
+                color: rebeccapurple;
+
+                span {
+                    content: "H";
+                    transform: scale(-1, 1);
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <p>say my name..</p>
+        <small><span>H</span>eizenberg</small>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <style>
+        /* override */
+        .header {
+            position: relative;
+        }
+        .container {
+            margin-top: 12px;
+        }
+    </style>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+
+            .displayUtama {
+                margin-top: 32px;
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    </style>
+    <style>
+        .show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+            --ukuranFont: 8rem;
+        }
+        .belakang {
+            position: absolute;
+
+            height: var(--ukuranFont);
+            width: 100%;
+            .garis {
+                width: 100%;
+                height: calc(var(--ukuranFont) / 4);
+
+                background-image: 
+                    repeating-linear-gradient(315deg, var(--garis) 0, 
+                    var(--garis) 1px, transparent 0, transparent 50%);
+                background-size: 10px 10px;
+
+                border: solid 1px var(--garis-tebal);
+                transform: translateY(.8rem);
+            }
+        }
+        .h0 {
+            font-family: raleway;
+            font-size: var(--ukuranFont);
+            font-weight: bold;
+            opacity: .8;
+        }
+
+        .tombol {
+            margin-top: 32px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="wrapper"></div>
+    </div>
+
+    <div class="container">
+        <div class="wrapper">
+            <h3>pick your font with</h3>
+            <h3>filtering display.</h3>
+            
+            <div class="displayUtama">
+                <div class="show">
+                    <div class="belakang">
+                        <div class="garis"></div>
+                        <div class="garis"></div>
+                        <div class="garis"></div>
+                        <div class="garis"></div>
+                    </div>
+                    <div class="h0">Typography</div>
+                </div>
+                <div class="tombol">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <label for="letter">
+                            <p>
+                                Leter spacing : 
+                            </p>
+                        </label>
+                        <input style="width: 320px;" type="range" name="letter" id="letter" min="-30" max="30" value="0">
+                        <div class="hasil">
+                            <p>0px</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+    </div>
+
+    <script>
+        const fontShow = document.querySelector(".h0")
+        const sliderLetter = document.querySelector("input#letter")
+        const letterHasil = document.querySelector(".hasil p")
+
+        sliderLetter.addEventListener('input', (e) => {
+            const newSize = e.target.value;
+
+            letterHasil.textContent = `${newSize}px`;
+
+            fontShow.style.letterSpacing = `${newSize}px`;
+        });
+    </script>
+</body>
+</html>

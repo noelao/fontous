@@ -1,0 +1,59 @@
+
+@media screen and (max-width : 820px) {
+    body {
+        font-size: .6rem;
+    }
+    .wrapper {
+        .garisanBelakang {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            .garis {
+                width: 1fr;
+            }
+        }
+    }
+    .tampilkan {
+        margin-top: 32px;
+        --ukuranFont: 3rem;
+        --translation: .3rem;
+        .show {
+            .belakang {
+                .garis {
+                    border: solid 1px var(--garis-tebal);
+                    border-top: none;
+                }
+                .garis:nth-child(1) {
+                    border-top: solid 1px var(--garis-tebal);
+                }
+            }
+        }
+        .show2 {
+            width: 100%;
+            .belakang2 {
+                .garis {
+                    border: solid 1px var(--garis-tebal);
+                    border-top: none;
+                }
+            }
+        }
+    }
+    .tombol {
+        margin-top: 160px;
+        width: calc(100%);
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+        .download {
+            grid-column: span 1;
+        }
+    }
+
+    .pilihan {
+        margin-top: 180px;
+        .pilihMana {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .modelan {
+            width: 100%;
+        }
+    }
+}

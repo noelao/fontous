@@ -1,0 +1,171 @@
+/* public/css/style.css (Versi Baru) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --border-color: #dee2e6;
+    --primary-blue: #0d6efd;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+code {
+    background-color: #e9ecef;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+}
+
+.preview-controls textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    resize: vertical;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1rem; /* Memberi jarak ke toolbar */
+}
+
+/* --- STYLE BARU UNTUK TOOLBAR --- */
+.style-toolbar {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.tool-group-slider {
+    flex-grow: 1; /* Agar slider mengisi ruang sisa */
+    min-width: 200px;
+}
+.tool-group-slider input[type="range"] {
+    width: 100%;
+}
+
+.style-btn, .align-btn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.style-btn:hover, .align-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style untuk tombol saat aktif */
+.style-btn.active, .align-btn.active {
+    background-color: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+}
+
+.style-btn b { font-weight: 900; }
+.style-btn i { font-style: italic; }
+#font-size-value {
+    font-family: 'Menlo', monospace;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    min-width: 40px;
+    text-align: right;
+}
+
+/* --- STYLE BARU UNTUK EFEK TEKS --- */
+.text-bold {
+    font-weight: 700 !important; /* !important untuk menimpa style inline jika ada */
+}
+.text-italic {
+    font-style: italic !important;
+}
+
+/* ... sisa style dari sebelumnya tidak berubah ... */
+.font-list-container { margin-top: 2rem; }
+.font-group-title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border-color);
+}
+.font-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.font-card {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+.font-name {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+}
+.font-preview {
+    font-size: 32px; /* Ukuran default, akan dikontrol oleh JS */
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    margin: 0;
+    word-wrap: break-word;
+    line-height: 1.4;
+    flex-grow: 1;
+    transition: font-size 0.2s;
+}
+.no-fonts {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 2rem;
+    background-color: #fff3cd;
+    color: #664d03;
+    border: 1px solid #ffecb5;
+    border-radius: 8px;
+}

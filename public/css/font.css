@@ -1,0 +1,29 @@
+@font-face {
+    font-family: raleway;
+    src: url(/fonts/sans-serif/raleway.ttf);
+}
+@font-face {
+    font-family: poppins;
+    src: url(/fonts/sans-serif/poppins.ttf);
+}
+@font-face {
+    font-family: abrilfatface;
+    src: url(/fonts/sans-serif/AbrilFatface-Regular.ttf);
+}
+@font-face {
+    font-family: cool;
+    src: url(/fonts/black-letter/CSBlacken.otf);
+}
+@font-face {
+    font-family: script;
+    src: url(/fonts/script/Whispered-Trails.ttf);
+}
+
+h1, h2, h3, .h0, h0 {
+    font-family: raleway;
+    line-height: 1;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}

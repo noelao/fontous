@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <style>
+        /* override */
+        .header {
+            position: relative;
+        }
+        .container {
+            margin: 12px 0;
+        }
+    </style>
+    <style>
+        :root {
+            --lineHeight: 1;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            .garisanBelakang {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                gap: 12px;
+                z-index: -10;
+                .garis {
+                    height: 100%;
+                    flex: 1;
+                    border: solid var(--garis) 1px;
+                    background-image: 
+                        repeating-linear-gradient(315deg, var(--garis) 0, 
+                        var(--garis) 1px, transparent 0, transparent 50%);
+                    background-size: 10px 10px;
+                }
+            }
+            
+            .displayUtama {
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+    
+    <style>
+        .tampilkan {
+            width: 100%;
+            position: relative;
+            --ukuranFont: 8rem;
+            --ukuranFontB4: calc(var(--ukuranFont)/4);
+            --translation: .8rem;
+            /* font-family: abrilfatface; */
+            font-family: <%= terpilih.nama %>;
+            .show {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                position: relative;
+                .belakang {
+                    position: absolute;
+
+                    width: 100%;
+                    .garis {
+                        width: 100%;
+                        height: calc(var(--lineHeight) * var(--ukuranFontB4));
+        
+                        border: solid 1px var(--garis-tebal);
+                        transform: translateY(var(--translation));
+                    }
+                }
+                .h0 {
+                    line-height: var(--lineHeight);
+                    font-family: inherit;
+                    font-size: var(--ukuranFont);
+                    font-weight: bold;
+                    opacity: .8;
+                }
+            }
+            .show2 {
+                position: absolute;
+                right: 0;
+                top: 100%;
+
+                width: calc(50% - 6px);
+
+                transform: translateY(var(--translation));
+                --ukuranFontB4Kecil: calc((var(--ukuranFont)/4) * var(--lineHeight));
+                .kata {
+                    font-size: var(--ukuranFontB4);
+                    line-height: var(--lineHeight);
+                    position: absolute;
+                    top: var(--ukuranFontB4Kecil);
+                    opacity: .8;
+                }
+                .belakang2 {
+                    width: 100%;
+                    .garis {
+                        width: 100%;
+                        height: var(--ukuranFontB4Kecil);
+                        border: solid 1px var(--garis-tebal);
+                    }
+                }
+            }
+        }
+
+        .tombol {
+            margin-top: 32px;
+            width: calc(50% - 6px);
+            display: grid;
+            justify-content: start;
+            gap: 6px 12px;
+            grid-template-columns: auto auto;
+
+            .download {
+                padding: .5rem 1rem;
+                background-color: var(--biru);
+                color: var(--terang);
+                width: calc(100% );
+                margin-top: 2rem;
+                grid-column: span 2;
+            }
+        }
+    </style>
+    <style>
+        .pilihan {
+            margin-top: 308px;
+            width: 100%;
+            .pilihMana {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 12px;
+                font-family: poppins;
+                .group {
+                    width: 100%;
+                    
+                    border: solid 1px var(--garis-tebal);
+                    padding: 12px 0;
+                    cursor: pointer;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 12px;
+                }
+                .group:hover {
+                    background-color: #fff;
+                }
+                .ini {
+                    background-color: var(--biru);
+                    color: var(--terang);
+                }
+                .ini:hover {
+                    background-color: var(--biru);
+                }
+            }
+            .modelan {
+                width: calc(50% - 6px);
+                
+                border: solid var(--garis-tebal) 1px;
+                background-color: var(--terang);
+
+                margin-top: 12px;
+                height: 3.2rem;
+
+                position: sticky;
+                top: 0;
+
+                display: flex;
+
+                padding: .5rem;
+                gap: 12px;
+                
+                .tool-group {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    
+                    .style-btn, .align-btn {
+                        background-color: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        height: 100%;
+                        aspect-ratio: 1;
+                        cursor: pointer;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: background-color 0.2s, border-color 0.2s;
+                    }
+
+                    .style-btn:hover, .align-btn:hover {
+                        background-color: #f0f0f0;
+                    }
+                    
+                    .style-btn.active, .align-btn.active {
+                        background-color: var(--biru);
+                        color: var(--terang);
+                        border-color: var(--biru);
+                    }
+                }
+            }
+            .genjreng {
+                margin-top: 12px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                .font-card {
+                    width: 100%;
+                    border: solid var(--garis-tebal) 1px;
+                    display: flex;
+                    flex-direction: column;
+                    h3 {
+                        width: 100%;
+                        background-color: var(--terang);
+                        border-bottom: solid var(--garis-tebal) 1px;
+                        /* padding: 1rem 0; */
+                    }
+                    p {
+                        font-size: 2rem;
+                        padding: 2rem 0;
+                    }
+                }
+            }
+        }
+    </style>
+    <style>
+        .text-bold {
+            font-weight: 700 !important; /* !important untuk menimpa style inline jika ada */
+        }
+        .text-italic {
+            font-style: italic !important;
+        }
+    </style>
+    <style>
+        @media screen and (max-width : 820px) {
+            body {
+                font-size: .6rem;
+            }
+            .wrapper {
+                .garisanBelakang {
+                    display: grid;
+                    grid-template-columns: repeat(6, 1fr);
+                    .garis {
+                        width: 1fr;
+                    }
+                }
+            }
+            .tampilkan {
+                margin-top: 32px;
+                --ukuranFont: 3rem;
+                --translation: .3rem;
+                .show {
+                    .belakang {
+                        .garis {
+                            border: solid 1px var(--garis-tebal);
+                            border-top: none;
+                        }
+                        .garis:nth-child(1) {
+                            border-top: solid 1px var(--garis-tebal);
+                        }
+                    }
+                }
+                .show2 {
+                    width: 100%;
+                    .belakang2 {
+                        .garis {
+                            border: solid 1px var(--garis-tebal);
+                            border-top: none;
+                        }
+                    }
+                }
+            }
+            .tombol {
+                margin-top: 160px;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 0;
+            }
+            .pilihan {
+                margin-top: 180px;
+                .pilihMana {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                .modelan {
+                    width: 100%;
+                }
+            }
+        }
+    </style>
+
+
+    <style>
+        <% fontGroups.forEach(group => { %>
+            <% group.fonts.forEach(font => { %>
+                @font-face {
+                    font-family: '<%= font.fontFamily %>';
+                    src: url('/fonts/<%= font.path %>');
+                }
+            <% }) %>
+        <% }) %>
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <div class="wrapper"></div>
+    </div>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="garisanBelakang">
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+            </div>
+
+
+            
+            <div class="displayUtama">
+                <h3>klick and adjust</h3>
+                <div class="tampilkan">
+                    <div class="show">
+                        <div class="belakang">
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                        </div>
+                        <div class="h0">Typography</div>
+                    </div>
+                    <div class="show2">
+                        <div class="belakang2">
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                        </div>
+                        <div class="kata">
+                            <p>kata kata yang tidak tersampaikan namun tertulis bisa saja tersampaikan walau hanya di angan-angan.</p>
+                            <p>bunga mawar yang sudah rentan dari tanda percintaan sekarang hanyalah sebuah kenangan dan bukan lagi hal yang menawan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tombol">
+                        <label for="letter">
+                            <p>
+                                Leter spacing : 
+                            </p>
+                        </label>
+                        <div class="hasilan" style="display: flex; gap: 12px;">
+                            <input style="width: 320px;" type="range" name="letter" id="letter" min="-30" max="30" value="0">
+                            <div class="hasil">
+                                <p>0px</p>
+                            </div>
+                        </div>  
+                        <label for="line-tinggi">
+                            <p>
+                                Line height : 
+                            </p>
+                        </label>
+                        <div class="hasilan" style="display: flex; gap: 12px;">
+                            <input style="width: 320px;" type="range" name="line-tinggi" id="line-tinggi" min="0" max="20" value="10">
+                            <div class="hasil">
+                                <p>1</p>
+                            </div>
+                        </div>
+                        <a class="download" href="<%= terpilih.path %>" target="_blank">
+                            <h3>download</h3>
+                        </a>
+                        <p><%= terpilih.nama%></p>
+
+                </div>
+            </div>
+
+            <div class="pilihan">
+            <% if (fontGroups.length > 0) { %>               
+                <div class="pilihMana">
+                    <div class="group ini">
+                        <h2>Semua</h2>
+                        <h2>9</h2>
+                    </div>
+                <% fontGroups.forEach(group => { %>
+                    <div class="group">
+                        <h2><%= group.groupName %></h2>
+                        <h2><%= group.fonts.length %></h2>
+                    </div>
+                <% }) %>
+                </div>
+
+                <div class="modelan">
+                    <div class="tool-group">
+                        <button class="style-btn active" data-style="bold" title="Bold"><b>B</b></button>
+                        <button class="style-btn" data-style="italic" title="Italic"><i>I</i></button>
+                    </div>
+                </div>
+
+                <div class="genjreng">
+                <% fontGroups.forEach(group => { %>
+                    <% group.fonts.forEach(font => { %>
+                        <a class="font-card" href="/fonts/<%= font.displayName %>">
+                            <h3 class="font-name" style="font-family: '<%= font.fontFamily %>';"><%= font.displayName %></h3>
+                            <p class="font-preview text-bold" style="font-family: '<%= font.fontFamily %>';">
+                                Papua bukan tanah kosong, papua adalah dompet koruptor.
+                            </p>
+                        </a>
+                    <% }) %>
+                <% }) %>
+                </div>
+            <% } else { %>
+                <p class="no-fonts">Tidak ada folder font yang ditemukan di <code>public/fonts</code>.</p>
+            <% } %>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+    </div>
+
+    
+    <script>
+        const fontShow = document.querySelector(".h0")
+        const sliderLetter = document.querySelector("input#letter")
+        const sliderHeight = document.querySelector("input#line-tinggi")
+        const letterHasil = document.querySelectorAll(".hasil p")
+
+        const tulisanKecil = document.querySelectorAll(".show2 .kata p")
+
+        sliderLetter.addEventListener('input', (e) => {
+            const newSize = e.target.value;
+
+            letterHasil[0].textContent = `${newSize}px`;
+
+            fontShow.style.letterSpacing = `${newSize}px`;
+            tulisanKecil.forEach((p) => {
+                p.style.letterSpacing = `${newSize}px`;
+            })
+        });
+        sliderHeight.addEventListener('input', (e) => {
+            const newSize = e.target.value / 10;
+
+            letterHasil[1].textContent = `${newSize}`;
+
+            document.documentElement.style.setProperty('--lineHeight', newSize);
+        });
+    </script>
+    <script>
+        const styleBtns = document.querySelectorAll('.style-btn');
+        const fontPreviews = document.querySelectorAll('.font-preview');
+
+
+        styleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const style = btn.dataset.style; // -> "bold" atau "italic"
+                
+                // Toggle status aktif pada tombol yang diklik
+                btn.classList.toggle('active');
+                
+                // Terapkan/hapus class style pada semua teks pratinjau
+                fontPreviews.forEach(p => {
+                    p.classList.toggle(`text-${style}`);
+                });
+            });
+        });
+    </script>
+    <script>
+        const groupButton = document.querySelectorAll(".group")
+
+        groupButton.forEach((btn) => {
+            btn.addEventListener("click", ()=> {
+                
+                groupButton.forEach(b => b.classList.remove('ini'));
+                btn.classList.toggle("ini")
+            })
+        })
+
+    </script>
+</body>
+</html>

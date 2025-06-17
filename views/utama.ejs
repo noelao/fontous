@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="/css/global.css">
+
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/content.css">
+
+    <link rel="stylesheet" href="/css/mobile.css">
+    
+    <link rel="stylesheet" href="/css/slide.css">
+</head>
+<body>
+    <div class="tutupSemua"></div>
+    <div class="katakanIni">
+        <div class="tutup"></div>
+        <textarea name="katakanIni" id="katakanIni"></textarea>
+    </div>
+    <%- include('./components/header')%>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="garisanBelakang">
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+                <div class="garis"></div>
+            </div>
+
+
+            
+            <div class="displayUtama">
+                <h3>klick and adjust</h3>
+                <div class="tampilkan">
+                    <div class="show">
+                        <div class="belakang">
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                        </div>
+                        <div class="h0">Typography</div>
+                    </div>
+                    <div class="show2">
+                        <div class="belakang2">
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                            <div class="garis"></div>
+                        </div>
+                        <div class="kata">
+                            <p>kata kata yang tidak tersampaikan namun tertulis bisa saja tersampaikan walau hanya di angan-angan.</p>
+                            <p>bunga mawar yang tumbuh ditaman, penuh dengan duri jauh dari tai tikus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tombol">
+                        <label for="letter">
+                            <p>
+                                Leter spacing : 
+                            </p>
+                        </label>
+                        <div class="hasilan" style="display: flex; gap: 12px;">
+                            <input style="width: 320px;" type="range" name="letter" id="letter" class="custom-slider" min="-30" max="30" value="0">
+                            <div class="hasil">
+                                <p>0px</p>
+                            </div>
+                        </div>  
+                        <label for="line-tinggi">
+                            <p>
+                                Line height : 
+                            </p>
+                        </label>
+                        <div class="hasilan" style="display: flex; gap: 12px;">
+                            <input style="width: 320px;" type="range" name="line-tinggi" id="line-tinggi" class="custom-slider" min="0" max="20" value="10">
+                            <div class="hasil">
+                                <p>1</p>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+
+            <div class="pilihan">
+            <% if (fontGroups.length > 0) { %>               
+                <div class="pilihMana">
+                    <a href="#genjreng" class="group ini">
+                        <h2>Semua</h2>
+                        <h2><%= jumlahFont %></h2>
+                    </a>
+                <% fontGroups.forEach(group => { %>
+                    <a href="#genjreng" class="group">
+                        <h2><%= group.groupName %></h2>
+                        <h2><%= group.fonts.length %></h2>
+                    </a>
+                <% }) %>
+                </div>
+
+                <div class="modelan">
+                    <div class="tool-group">
+                        <button class="style-btn" data-style="bold" title="Bold"><b>B</b></button>
+                        <button class="style-btn" data-style="italic" title="Italic"><i>I</i></button>
+                        <button class="style-btn2" title="change">
+                            <b>
+                                ubah kata
+                            </b>
+                        </button>
+                    </div>
+                </div>
+
+                <section id="genjreng" class="genjreng">
+                    <!-- disini -->
+                </section>
+            <% } else { %>
+                <p class="no-fonts">Tidak ada folder font yang ditemukan di <code>public/fonts</code>.</p>
+            <% } %>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./components/footer') %>
+
+    <script src="./js/client.js"></script>
+
+</body>
+</html>
