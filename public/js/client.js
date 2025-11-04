@@ -41,6 +41,7 @@ function perintahBoldItalic(btn, fontPreviews) {
 async function renderIni(params) {
     const genjreng = document.querySelector(".genjreng");
     const urlIni = window.location.host
+    console.log(urlIni);
 
 
     genjreng.innerHTML =   `
