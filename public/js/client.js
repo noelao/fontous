@@ -66,8 +66,7 @@ async function renderIni(params) {
                 `
 
     try {
-        // 1. Gunakan async/await secara konsisten untuk fetch data
-        const response = await fetch(`http://${urlIni}/group/${params}`);
+        const response = await fetch(`https://${urlIni}/group/${params}`);
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
