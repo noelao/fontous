@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Izinkan API Anda diakses oleh frontend Vercel Anda
 const corsOptions = {
     // Ganti dengan URL Vercel frontend Anda (atau '*' untuk debugging)
-    origin: 'https://proyek-anda.vercel.app' 
+    origin: 'https://fontous.vercel.app/' 
 };
 
 // --- KONFIGURASI KUNCI HELMET ---
@@ -36,7 +36,7 @@ app.use(helmet({
             ...helmet.contentSecurityPolicy.getDefaultDirectives(),
             "script-src": ["'self'"],
             // Izinkan 'connect-src' (panggilan API) ke domain Vercel Anda
-            "connect-src": ["'self'", "*.vercel.app", "proyek-anda.vercel.app"]
+            "connect-src": ["'self'", "*.vercel.app", "fontous.vercel.app"]
         }
     }
 }));
