@@ -3,8 +3,8 @@ const ejs = require('ejs');
 const path = require('path');
 const fs = require('fs');
 
-// const helmet = require('helmet'); 
-// const cors = require('cors');
+const helmet = require('helmet'); 
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
@@ -15,37 +15,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-// security
-// Konfigurasi CORS
-// Izinkan API Anda diakses oleh frontend Vercel Anda
-// const corsOptions = {
-//     // Ganti dengan URL Vercel frontend Anda (atau '*' untuk debugging)
-//     origin: 'https://fontous.vercel.app/' 
-// };
-
-// // --- KONFIGURASI KUNCI HELMET ---
-
-// app.use(helmet({
-//     // Nonaktifkan COEP (Cross-Origin-Embedder-Policy)
-//     // Ini adalah penyebab paling umum pemblokiran di Vercel
-//     crossOriginEmbedderPolicy: false,
+const corsOptions = {
+    origin: 'https://fontous.vercel.app/' 
+};
+app.use(helmet({
+    crossOriginEmbedderPolicy: false,
     
-//     // (Opsional) Konfigurasi Content Security Policy (CSP)
-//     // Jika Anda menggunakan CSP, pastikan untuk mengizinkan API Anda
-//     contentSecurityPolicy: {
-//         directives: {
-//             ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-//             "script-src": ["'self'"],
-//             // Izinkan 'connect-src' (panggilan API) ke domain Vercel Anda
-//             "connect-src": ["'self'", "*.vercel.app", "fontous.vercel.app"]
-//         }
-//     }
-// }));
+    contentSecurityPolicy: {
+        directives: {
+            ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+            "script-src": ["'self'"],
+            // Izinkan 'connect-src' (panggilan API) ke domain Vercel Anda
+            "connect-src": ["'self'", "*.vercel.app", "fontous.vercel.app"]
+        }
+    }
+}));
 
-// // --- URUTAN PENTING ---
-// // 1. Terapkan Helmet (dengan konfigurasi)
-// // 2. Terapkan CORS
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 
 
